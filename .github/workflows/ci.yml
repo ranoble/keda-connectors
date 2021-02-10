@@ -54,7 +54,6 @@ jobs:
           cd kafka-http-connector/
           docker build -t localhost:5000/kafka-connector:latest .
           docker push localhost:5000/kafka-connector:latest
-          rm kafka-http-connector/common.tgz
       - name: Create Kafka Docker Image for Consumer
         if: steps.filter.outputs.kafkachanges == 'true'      
         run: |
