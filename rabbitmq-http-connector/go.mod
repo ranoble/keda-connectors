@@ -9,3 +9,4 @@ require (
 	go.uber.org/zap v1.15.0
 	gopkg.in/yaml.v2 v2.2.4 // indirect
 )
+replace github.com/fission/keda-connectors/common v0.0.0-20200809052657-5ab20c06c62f => /local_dependancies/common

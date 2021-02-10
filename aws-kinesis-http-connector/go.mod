@@ -7,3 +7,4 @@ require (
 	github.com/fission/keda-connectors/common v0.0.0-20200915102844-c68eb4e4d582
 	go.uber.org/zap v1.16.0
 )
+replace github.com/fission/keda-connectors/common v0.0.0-20200915102844-c68eb4e4d582 => /local_dependancies/common
