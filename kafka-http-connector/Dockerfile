@@ -7,6 +7,12 @@ WORKDIR /app
 COPY go.mod . 
 COPY go.sum .
 
+# TEMPORARY ONLY
+RUN mkdir /local_dependancies
+ADD common.tar /local_dependancies/
+RUN ls -al /local_dependancies
+# END TEMPORARY ONLY
+
 RUN go mod download
 
 # Copy source code to image
