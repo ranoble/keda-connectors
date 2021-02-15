@@ -92,8 +92,9 @@ func HandleHTTPRequest(message string, headers http.Header, data ConnectorMetada
 		return -1, nil, fmt.Errorf("every function invocation retry failed; final retry gave empty response. http_endpoint: %v, source: %v", data.HTTPEndpoint, data.SourceName)
 	}
 
-	if resp.StatusCode < 200 && resp.StatusCode > 300 {
+	if resp.StatusCode < 200 || resp.StatusCode > 300 {
 		return resp.StatusCode, nil, fmt.Errorf("request returned failure: %v. http_endpoint: %v, source: %v", resp.StatusCode, data.HTTPEndpoint, data.SourceName)
+
 	}
 	return resp.StatusCode, resp, nil
 }
