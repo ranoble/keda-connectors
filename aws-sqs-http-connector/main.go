@@ -75,7 +75,7 @@ func (conn awsSQSConnector) consumeMessage() {
 				headers.Add(k, *v)
 			}
 
-			resp, err := common.HandleHTTPRequest(*message.Body, headers, conn.connectordata, conn.logger)
+			_, resp, err := common.HandleHTTPRequest(*message.Body, headers, conn.connectordata, conn.logger)
 			if err != nil {
 				conn.errorHandler(errorQueueURL, err)
 			} else {
