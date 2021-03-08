@@ -10,3 +10,6 @@ require (
 	golang.org/x/text v0.3.3 // indirect
 	gopkg.in/yaml.v2 v2.2.7 // indirect
 )
+
+replace github.com/fission/keda-connectors/common v0.0.0-20201027171947-6a90e826f46a => /local_dependancies/common
+
